@@ -1,0 +1,10 @@
+* ComiCops: Classifier for Detecting Suspicious Comic Images
+
+
+Fetched preview images from konachan and trained a classifier using SVM. It comes
+with a Tkinter based GUI for easier access to the classifier.
+
+[[showcase.png]]
+
+:NOTE: This project is still in somewhat unusable state since the accuracy is under
+80 percent, we'll improve the accuracy of the classifier later on.
