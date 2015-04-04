@@ -6,5 +6,5 @@ with a Tkinter based GUI for easier access to the classifier.
 
 [[showcase.png]]
 
-:NOTE: This project is still in somewhat unusable state since the accuracy is under
-80 percent, we'll improve the accuracy of the classifier later on.
+- NOTE :: This project is still in somewhat unusable state since the accuracy is
+          under 80 percent, we'll improve the accuracy of the classifier later on.
