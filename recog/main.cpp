@@ -57,12 +57,6 @@ int main(int argc, char *argv[])
 			vecnode[k].index = -1; // endmark
 			vecnode[k].value = 0;
 
-			// printf("vector size: %d\n", k);
-			// for (i = 0; i < k; i++) {
-			// 	printf("%d:%g ", vecnode[i].index, vecnode[i].value);
-			// }
-			// printf("\n");
-
 			// do svm-predict
 			svm_model *model = svm_load_model("./comicops.model");
 			if (model != NULL) {

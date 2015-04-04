@@ -4,7 +4,7 @@ from Tkinter import *
 from PIL import ImageTk, Image
 import ttk
 import subprocess as sub
-import urllib, thread
+import os, sys, urllib, thread
 
 
 class ComiCops(Frame):
@@ -82,10 +82,16 @@ class ComiCops(Frame):
             self.rating.insert(0, "Error: " + p.stderr.readline())
             self.rating.config(bg = "#777777")
 
+if __name__ == "__main__":
+    if os.path.isfile("comicops.model"):
+        root = Tk()
+        root.geometry("500x400")
+        root.title("ComiCops")
+        app = ComiCops(master = root)
+        root.config(width = 500, height = 500)
+        app.mainloop()
+    else:
+        print "comicops.model is not found"
+        print "NOTE: you can download this svm model file from this url:"
+        print "      http://pan.baidu.com/s/1mgJwR80"
 
-root = Tk()
-root.geometry("500x400")
-root.title("ComiCops")
-app = ComiCops(master = root)
-root.config(width = 500, height = 500)
-app.mainloop()
