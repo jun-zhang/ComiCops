@@ -1,0 +1,30 @@
+#!/bin/sh
+
+script=$(readlink -f $0)
+scriptpath=`dirname $script`
+
+if [ $# != 3 ]; then
+	echo "usage: $0 fextprog inputls outfile"
+	echo "  fextprog: feature extraction executable"
+	echo "  inputls:  file containing list of input images"
+	echo "  outfile:  output extracted feature vectors to outfile"
+	exit 0
+fi
+
+prog=$1
+inputls=$2
+outfile=$3
+
+export LD_LIBRARY_PATH=$scriptpath/../freeimage/lib/
+rm -f $outfile
+
+img_dataset=`cat $inputls`
+len=`cat $inputls | wc -l`
+i=1
+for img in $img_dataset
+do
+	echo "processing image $img ($i of $len) ..."
+	echo "$img " >> $outfile
+	$scriptpath/run_featureext $prog $img >> $outfile
+	i=$((i + 1)) 
+done
