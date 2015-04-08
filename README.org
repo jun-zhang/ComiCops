@@ -7,4 +7,9 @@ with a Tkinter based GUI for easier access to the classifier.
 [[showcase.png]]
 
 - NOTE :: This project is still in somewhat unusable state since the accuracy is
-          under 80 percent, we'll improve the accuracy of the classifier later on.
+          under 90 percent, we'll improve the accuracy of the classifier later on.
+
+- NOTE II :: Currently I am concentrating on speeding up the training and validation
+             of dense training datasets, please refer to the `dense` branch in my fork 
+             of libsvm for details.
+
